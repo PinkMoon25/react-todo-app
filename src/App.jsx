@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
+import TodoContainer from './components/TodoContainer';
 
 function App() {
   return (
-    <p>
-      Cleanedup React App
-    </p>
+    <TodoContainer />
   );
 }
 
