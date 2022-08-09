@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class TodoItem extends React.Component {
+class TodoItem extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,26 +17,46 @@ class TodoItem extends React.Component {
     });
   }
 
-  handleEditingDone(e) {
+  handleEditingDone() {
     this.setState({
       editable: false,
     });
   }
 
   render() {
+    const { editable } = this.state;
+    const {
+      Id, status, task, updateStatus, deleteTask, updateTask,
+    } = this.props;
     const viewMode = {};
     const editMode = {};
-    if (this.state.editable) viewMode.display = 'none';
+    if (editable) viewMode.display = 'none';
     else editMode.display = 'none';
     return (
       <li>
-        <input type="checkbox" checked={this.props.status} onChange={() => this.props.updateStatus(this.props.Id)} />
-        <span className={this.props.status ? 'task-complete' : ''} onDoubleClick={() => this.handleEditing()} style={viewMode}>{this.props.task}</span>
-        <input type="text" className="edit-task" style={editMode} onChange={(e) => this.props.updateTask(e.target.value, this.props.Id)} onBlur={this.handleEditingDone} value={this.props.task} />
-        <button onClick={() => { this.props.deleteTask(this.props.Id); }}>Delete</button>
+        <input type="checkbox" checked={status} onChange={() => updateStatus(Id)} />
+        <span className={status ? 'task-complete' : ''} onDoubleClick={() => this.handleEditing()} style={viewMode}>{task}</span>
+        <input
+          type="text"
+          className="edit-task"
+          style={editMode}
+          onChange={(e) => updateTask(e.target.value, Id)}
+          onBlur={this.handleEditingDone}
+          value={task}
+        />
+        <button type="button" onClick={() => { deleteTask(Id); }}>Delete</button>
       </li>
     );
   }
 }
+
+TodoItem.propTypes = {
+  task: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired,
+  Id: PropTypes.number.isRequired,
+  updateStatus: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+};
 
 export default TodoItem;

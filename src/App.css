@@ -1,54 +1,89 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    color: cornflowerblue;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 60vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 22px;
+  margin: 0 auto;
+  max-width: 60vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+header {
+  width: 100%;
+  color: #6495ed;
+  text-align: center;
 }
 
 ul {
-    list-style: none;
-    width: 100%;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-form, li {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
+form,
+li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+form > input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+button {
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  background: #6495ed;
+}
+
+li {
+  padding: 10px 8px;
+  background-color: #dc143c;
+  color: #fff;
+  border-radius: 8px;
 }
 
 li > span {
-    width: 100%;
+  width: 100%;
+  font-size: 22px;
+}
+
+li > input {
+  width: 30px;
+  height: 30px;
 }
 
 .task-complete {
-    font-style: italic;
-    color: rgb(131, 128, 128);
-    opacity: 0.5;
-    text-decoration: line-through;
+  font-style: italic;
+  color: rgb(131, 128, 128);
+  opacity: 0.5;
+  text-decoration: line-through;
 }
 
 .edit-task {
-    width: 100%;
-    padding: 5px 10px;
+  width: 100%;
+  padding: 5px 10px;
 }
 
 #hide {
-    display: none;
+  display: none;
 }

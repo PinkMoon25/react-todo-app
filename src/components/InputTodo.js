@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class InputTodo extends Component {
+class InputTodo extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,9 +18,11 @@ class InputTodo extends Component {
   }
 
   handleSubmit(e) {
-    if (this.state.task.trim()) {
+    const { task } = this.state;
+    const { addTaskItem } = this.props;
+    if (task.trim()) {
       e.preventDefault();
-      this.props.addTaskItem(this.state.task);
+      addTaskItem(task);
       this.setState({
         task: '',
       });
@@ -29,13 +32,16 @@ class InputTodo extends Component {
   }
 
   render() {
+    const { task } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Add Tasks" value={this.state.task} onChange={this.handleTask} />
-        <button>Submit</button>
+        <input type="text" placeholder="Add Tasks" value={task} onChange={this.handleTask} />
+        <button type="button">Submit</button>
       </form>
     );
   }
 }
+
+InputTodo.propTypes = { addTaskItem: PropTypes.func.isRequired };
 
 export default InputTodo;
