@@ -19,8 +19,36 @@ body {
     gap: 22px;
 }
 
+ul {
+    list-style: none;
+    width: 100%;
+}
+
 form, li {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
     font-weight: 700;
+}
+
+li > span {
+    width: 100%;
+}
+
+.task-complete {
+    font-style: italic;
+    color: rgb(131, 128, 128);
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.edit-task {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+#hide {
+    display: none;
 }

@@ -1,22 +1,28 @@
-import React from "react";
+import React from 'react';
+import TodoItem from './TodoItem';
 
 class TodosList extends React.Component {
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <ul>
-                {this.props.todos.map((todo) =>(
-                    <li key={todo.id}>
-                        <input type="checkbox" checked={todo.completed} onChange={()=>this.props.updateStatus(todo.id)} /> 
-                        {todo.title}
-                        <button onClick={()=>{this.props.deleteTask(todo.id)}}>Delete</button>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
-};  
+  constructor(props) {
+    super(props);
+  }
 
-export default TodosList
+  render() {
+    return (
+      <ul>
+        {this.props.todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            Id={todo.id}
+            status={todo.completed}
+            updateStatus={this.props.updateStatus}
+            task={todo.title}
+            deleteTask={this.props.deleteTask}
+            updateTask={this.props.updateTask}
+          />
+        ))}
+      </ul>
+    );
+  }
+}
+
+export default TodosList;
