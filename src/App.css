@@ -85,6 +85,7 @@ button {
   font-size: 16px;
   color: white;
   background: #6495ed;
+  cursor: pointer;
 }
 
 li {
