@@ -54,7 +54,7 @@ class TodoItem extends React.PureComponent {
 TodoItem.propTypes = {
   task: PropTypes.string.isRequired,
   status: PropTypes.bool.isRequired,
-  Id: PropTypes.number.isRequired,
+  Id: PropTypes.string.isRequired,
   updateStatus: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
