@@ -24,8 +24,6 @@
 
 have a working git on your localmachine.
 
-## Setup
-
 
 ## 🛠 Installation & Set Up
 To get a working local copy up and running follow these simple steps
