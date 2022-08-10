@@ -18,7 +18,7 @@
  
 ## Live Demo Link
 
-   Check it out live :point_right: [In progress]()
+   Check it out live :point_right: [To-do-list](https://pinkmoon25.github.io/react-todo-app/)
 
 ### Prerequisites
 
