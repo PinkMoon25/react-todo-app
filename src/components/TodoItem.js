@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaTrash } from 'react-icons/fa';
 
 class TodoItem extends React.PureComponent {
   constructor(props) {
@@ -44,7 +45,7 @@ class TodoItem extends React.PureComponent {
           onBlur={this.handleEditingDone}
           value={task}
         />
-        <button type="button" onClick={() => { deleteTask(Id); }}>Delete</button>
+        <button type="button" onClick={() => { deleteTask(Id); }} aria-label="delete"><FaTrash /></button>
       </li>
     );
   }

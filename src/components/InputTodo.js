@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaPlusCircle } from 'react-icons/fa';
 
 class InputTodo extends React.PureComponent {
   constructor(props) {
@@ -26,8 +27,6 @@ class InputTodo extends React.PureComponent {
       this.setState({
         task: '',
       });
-    } else {
-      alert('please enter task');
     }
   }
 
@@ -35,8 +34,8 @@ class InputTodo extends React.PureComponent {
     const { task } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Add Tasks" value={task} onChange={this.handleTask} />
-        <button type="button">Submit</button>
+        <input type="text" placeholder="Add Tasks" value={task} onChange={this.handleTask} required />
+        <button type="button" onClick={this.handleSubmit} aria-label="submit"><FaPlusCircle /></button>
       </form>
     );
   }

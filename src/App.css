@@ -37,6 +37,19 @@ a {
   text-decoration: none;
   font-size: 20px;
   color: #6495ed;
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: underline crimson solid 2px;
+  text-underline-offset: 4px;
+}
+
+.active {
+  transform: scale(1.1);
+  font-style: italic;
+  text-decoration: underline crimson solid 2px;
+  text-underline-offset: 4px;
 }
 
 ul {
@@ -61,6 +74,7 @@ form > input {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
+  font-size: 1.2em;
 }
 
 button {
@@ -87,7 +101,7 @@ li {
 
 li > span {
   width: 100%;
-  font-size: 22px;
+  font-size: 1.25em;
 }
 
 li > input {
@@ -110,7 +124,7 @@ li > input {
 
 .task-complete {
   font-style: italic;
-  color: rgb(131, 128, 128);
+  color: rgb(92, 88, 88);
   opacity: 0.5;
   text-decoration: line-through;
 }
