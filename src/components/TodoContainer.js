@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
 import InputTodo from './InputTodo';
 
@@ -55,7 +56,7 @@ class TodoContainer extends React.PureComponent {
   addTasks(task) {
     const { todos } = this.state;
     const newTask = {
-      id: Math.floor(Math.random() * 1000),
+      id: uuidv4(),
       title: task,
       completed: false,
     };
