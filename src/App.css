@@ -12,13 +12,19 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 60vw;
+  max-width: 75vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 22px;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 95vw;
+  }
 }
 
 header {
