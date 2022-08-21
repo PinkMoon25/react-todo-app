@@ -21,12 +21,6 @@ body {
   gap: 22px;
 }
 
-@media screen and (max-width: 576px) {
-  .container {
-    max-width: 95vw;
-  }
-}
-
 header {
   width: 100%;
   font-weight: 700;
@@ -143,4 +137,22 @@ li > input {
 
 #hide {
   display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 95vw;
+  }
+
+  .about-detail {
+    width: 80vw;
+  }
+
+  li > span {
+    font-size: 1em;
+  }
+
+  font > input {
+    font-size: 1em;
+  }
 }
